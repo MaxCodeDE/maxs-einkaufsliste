@@ -1,5 +1,7 @@
 package maxcode.de.maxseinkaufsliste;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -68,17 +70,30 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String newItem = editText.getText().toString();
-                // Item hinzufügen
-                items.add(newItem);
-                // Eingabefeld leeren
-                editText.getText().clear();
-                // Adapter neu laden -> Änderungen werden angezeigt
-                arrayAdapter.notifyDataSetChanged();
-                // Änderungen speichern
-                setItem(newItem, false);
+                if (newItem.equalsIgnoreCase("") || newItem == null) {
+                    new AlertDialog.Builder(MainActivity.this)
+                            .setTitle("Fehler!")
+                            .setMessage("Das Eingabefeld ist leer.")
+                            .setCancelable(false)
+                            .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.cancel();
+                                }
+                            }).show();
+                } else {
+                    // Item hinzufügen
+                    items.add(newItem);
+                    // Eingabefeld leeren
+                    editText.getText().clear();
+                    // Adapter neu laden -> Änderungen werden angezeigt
+                    arrayAdapter.notifyDataSetChanged();
+                    // Änderungen speichern
+                    setItem(newItem, false);
 
-                Toast toast = Toast.makeText(getApplicationContext(), newItem + " hinzugefügt!", Toast.LENGTH_LONG);
-                toast.show();
+                    Toast toast = Toast.makeText(getApplicationContext(), newItem + " hinzugefügt!", Toast.LENGTH_LONG);
+                    toast.show();
+                }
 
             }
 

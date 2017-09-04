@@ -29,7 +29,7 @@
             android:id="@+id/item_input"
             android:layout_width="260dp"
             android:layout_height="wrap_content"
-            android:hint="New item"
+            android:hint="Neuer Eintrag"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
@@ -39,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/item_input"
-            android:text="Add" />
+            android:drawableLeft="@drawable/ic_add" />
 
     </RelativeLayout>
 
