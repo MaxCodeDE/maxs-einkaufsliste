@@ -2,9 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <item
+        android:id="@+id/deleteAllSelectedItemsButton"
+        android:icon="@drawable/ic_check"
+        android:title="Checkox delete"
+        app:showAsAction="always">@color/colorWhite
+    </item>
+
     <item android:id="@+id/deleteAllItemsButton"
         android:icon="@drawable/ic_delete"
         android:title="Löschen"
-        app:showAsAction="always">@color/colorWhite</item>
+        app:showAsAction="always">@color/colorWhite
+    </item>
 
 </menu>

@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MaxsEinkaufsliste.iml" filepath="$PROJECT_DIR$/MaxsEinkaufsliste.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/maxs-einkaufsliste.iml" filepath="$PROJECT_DIR$/maxs-einkaufsliste.iml" />
     </modules>
   </component>
 </project>
