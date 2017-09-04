@@ -5,7 +5,7 @@
     <item
         android:id="@+id/deleteAllSelectedItemsButton"
         android:icon="@drawable/ic_check"
-        android:title="Checkox delete"
+        android:title="Checkox Löschen"
         app:showAsAction="always">@color/colorWhite
     </item>
 
