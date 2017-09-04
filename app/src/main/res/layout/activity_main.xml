@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="maxcode.de.maxseinkaufsliste.MainActivity"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true">
+
+    <ListView
+        android:id="@+id/clickable_item_list"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        tools:layout_editor_absoluteX="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
+
+    </ListView>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <EditText
+            android:id="@+id/item_input"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:hint="New item"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:id="@+id/addItemButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/item_input"
+            android:text="Add" />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
