@@ -54,11 +54,13 @@ public class MainActivity extends AppCompatActivity {
                     selectedItems.remove(selectedItem);
                     // Änderungen speichern
                     setItem(selectedItem, false);
+                    loadItems();
                 } else {
                     // Item zu makierten Items hinzufügen
                     selectedItems.add(selectedItem);
                     // Änderungen speichern
                     setItem(selectedItem, true);
+                    loadItems();
                 }
             }
 
@@ -82,14 +84,14 @@ public class MainActivity extends AppCompatActivity {
                                 }
                             }).show();
                 } else {
-                    // Item hinzufügen
-                    items.add(newItem);
                     // Eingabefeld leeren
                     editText.getText().clear();
                     // Adapter neu laden -> Änderungen werden angezeigt
                     arrayAdapter.notifyDataSetChanged();
                     // Änderungen speichern
                     setItem(newItem, false);
+                    // Item hinzufügen
+                    loadItems();
 
                     Toast toast = Toast.makeText(getApplicationContext(), newItem + " hinzugefügt!", Toast.LENGTH_LONG);
                     toast.show();
@@ -139,6 +141,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void loadItems() {
+        items.clear();
         // GEspeicherte Items laden und in Array Speichern
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
         Map<String, ?> allEntries = settings.getAll();
@@ -149,5 +152,7 @@ public class MainActivity extends AppCompatActivity {
             i++;
         }
     }
+
+
 
 }
